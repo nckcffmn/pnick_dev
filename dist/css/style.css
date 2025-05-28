@@ -64,6 +64,11 @@ a:link, a:visited, a:active {
 }
 
 /* Page Stylings */
+
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--bg-color);
     padding: 5% 18%;
