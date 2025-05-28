@@ -582,11 +582,14 @@ nav ul:nth-of-type(2) li a:hover {
 
 /* Tablet (max-width: 900px) */
 @media (max-width: 960px) {
+    #tools .tool::after {
+        display: none;
+    }
 
     body {
         padding: 5% 10%;
     }
-    
+
     #hero h2, h2 {
         font-size: 2rem;
     }
