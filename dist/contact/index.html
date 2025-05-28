@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&family=Schoolbell&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Contact - ./pnick.dev</title>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li class="logo">
+          <a href="/">nckcffmn</a>
+        </li>
+        <li id="bluesky">
+          <a
+            href="https://bsky.app/profile/nckcffmn.bsky.social"
+            target="_blank"
+            ><img src="../icons/bluesky-sketch.svg" alt=""
+          /></a>
+        </li>
+        <li id="linkedin">
+          <a href="https://www.linkedin.com/in/nckcffmn/" target="_blank"
+            ><img src="../icons/linkedin-sketch.svg" alt=""
+          /></a>
+        </li>
+        <li id="dribbble">
+          <a href="https://dribbble.com/nckcffmn" target="_blank"
+            ><img src="../icons/dribbble-sketch.svg" alt=""
+          /></a>
+        </li>
+        <li id="behance">
+          <a href="https://www.behance.net/nckcffmn" target="_blank"
+            ><img src="../icons/behance-sketch.svg" alt=""
+          /></a>
+        </li>
+        <li id="github">
+          <a href="https://github.com/nckcffmn" target="_blank"
+            ><img src="../icons/github-sketch.svg" alt=""
+          /></a>
+        </li>
+        <li id="codepen">
+          <a href="https://codepen.io/ncoffman" target="_blank"
+            ><img src="../icons/codepen-sketch.svg" alt=""
+          /></a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>My Resume:</li>
+        <li>
+          <a href="../files/NCoffman-Resume-5_1_2025.docx" target="_blank"
+            >.docx 📝</a
+          >
+        </li>
+        <li>
+          <a href="../files/NCoffman-Resume-5_1_2025.pdf" target="_blank"
+            >.pdf 📄</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+       
+      
+<section id="contact">
+  <h1>Let's work on something together!</h1>
+  <div class="contact-columns">
+    <div class="contact-col">
+      <h2>Email Me</h2>
+      <p>
+        The easiest way to reach me is through email - I check it often, so
+        you'll hear back from me pretty quickly.
+      </p>
+      <a
+        href="#"
+        class="contact-btn"
+        onclick="copyFunc()"
+        onmouseout="outFunc()"
+        id="emailBtn"
+        >Copy my Email Address</a
+      >
+    </div>
+    <div class="contact-col">
+      <h2>Connect on LinkedIn</h2>
+      <p>Feel free to connect with me on LinkedIn and send me a message</p>
+      <a
+        href="https://linkedin.com/in/nckcffmn"
+        target="_blank"
+        class="contact-btn"
+        >Visit my LinkedIn Profile</a
+      >
+    </div>
+    <div class="contact-col">
+      <h2>DM me on social media</h2>
+      <p>
+        Instagram is social media platform I check most often
+      </p>
+      <a href="https://github.com/nckcffmn" target="_blank" class="contact-btn">
+        View my Instagram</a
+      >
+    </div>
+  </div>
+
+  <script>
+    function copyFunc() {
+      var myEmail = "ncoffman97@gmail.com";
+      navigator.clipboard.writeText(myEmail);
+
+      var btn = document.getElementById("emailBtn");
+      btn.innerHTML = "Email address copied!";
+    }
+
+    function outFunc() {
+      var tooltip = document.getElementById("emailBtn");
+      tooltip.innerHTML = "Copy my Email Address";
+    }
+  </script>
+</section>
+
+    </main>
+
+    <footer>
+      <div class="copyright">
+        <p>© 2023 Nick Coffman, All rights reserved 🎔</p>
+      </div>
+      <div class="quote">
+        <p>
+          👱‍♀️ Why, don't you mean impossible?
+          <br />
+          🚪 No, I do mean impassible. Nothing's impossible!
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

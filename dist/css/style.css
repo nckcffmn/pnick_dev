@@ -1,0 +1,627 @@
+/* No, I do mean impassible.
+Nothing's impossible! */
+
+/* Default Styles 
+    * Styles that are applied to elements by default to ANIHILATE the default browser styles.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0 solid transparent;
+    font-family: "Geist";
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+}
+
+/* Variables
+    * Used to utilize global variables throughout the CSS file.
+*/
+:root {
+    /* Colors */
+    --bg-color: #0b0c0e;
+    --secondary-color: #111013;
+    --secondary-color-highlight: #1b1a1e;
+    --text-color: #f2f2f2;
+    --text-color-light: #9b9b9b;
+    --accent-color: #24a87b;
+    /* Flexbox */
+    --flex-gap: 16px;
+    /* Borders */
+    --border-light: 8px;
+    --border-color: 1px solid #ffffff18;
+}
+
+/* Utility Classes 
+    * Used to apply repeated, common styles to elements.
+*/
+
+/* Text Styles */
+
+.text-normal {
+    color: var(--text-color);
+}
+
+.text-accent {
+    color: var(--accent-color);
+}
+
+.text-light {
+    color: var(--text-color-light);
+}
+
+/* Page Stylings */
+body {
+    background-color: var(--bg-color);
+    padding: 5% 18%;
+    color: var(--text-color);
+}
+
+section, header, footer, nav {
+    margin-bottom: 3%;
+    padding: 1%;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 400;
+    color: var(--text-color-light);
+    text-align: justify;
+}
+
+section a {
+    color: var(--accent-color);
+    transition: content 2s ease;
+}
+
+section a:hover {
+    color: #6edfba;
+}
+
+footer {
+    font-size: 0.8rem;
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+footer div {
+    width: 50%;
+}
+
+footer .quote {
+    align-self: flex-end;
+}
+
+footer .quote p {
+    font-family: "Schoolbell", cursive;
+    font-size: 1rem;
+    font-weight: 400;
+    font-size: 0.8rem;
+    user-select: none;
+    text-align: right;
+    line-height: 1rem;
+}
+
+footer .copyright p {
+    font-size: 0.8rem;
+    user-select: none;
+    font-family: "Schoolbell", cursive;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid#ffffff18;
+    font-size: 1rem;
+}
+
+nav img {
+    height: 1.5rem;
+    width: 1.5rem;
+    vertical-align: middle;
+}
+
+nav img:hover {
+    filter: brightness(1.5) contrast(0.7);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--flex-gap);
+    position: relative;
+}
+
+nav ul li {
+    list-style: none;
+    font-weight: 400;
+    position: relative;
+}
+
+nav ul li::after {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    min-height: 100%;
+    height: auto;
+    z-index: 100;
+    left: 140%;
+    top: -6px;
+    text-align: left;
+    padding: 4px 8px;
+
+    background: rgba(55, 55, 55, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(77, 77, 77, 0.37);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.41);
+}
+
+nav ul li:hover::after {
+    visibility: visible;
+    transition: opacity 0.3s;
+    opacity: 100%;
+}
+
+nav ul li#bluesky::after {
+    content: 'Bluesky';
+}
+
+nav ul li#linkedin::after {
+    content: 'LinkedIn';
+}
+
+nav ul li#dribbble::after {
+    content: 'Dribbble';
+}
+
+nav ul li#behance::after {
+    content: 'Behance';
+}
+
+nav ul li#github::after {
+    content: 'GitHub';
+}
+
+nav ul li#codepen::after {
+    content: 'CodePen';
+}
+
+nav ul li a {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+nav ul:nth-of-type(2) li a {
+    background-color: var(--secondary-color);
+    padding: 6px 12px;
+    border-radius: var(--border-light);
+    border: var(--border-color);
+}
+
+nav ul:nth-of-type(2)::after {
+    content: '(last updated: 5/1/2025)';
+    font-family: "Schoolbell", cursive;
+    position: absolute;
+    color: var(--accent-color);
+    top: -32px;
+    right: 18px;
+}
+
+nav ul:nth-of-type(2) li a:hover {
+    background-color: var(--secondary-color-highlight);
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Section Stylings */
+
+#hero {
+    position: relative;
+}
+
+#hero h2 {
+    font-weight: 600;
+    font-style: normal;
+    font-size: 3em;
+    position: relative;
+}
+
+#hero .name {
+    position: inherit;
+}
+
+#hero p a {
+    text-decoration: underline dotted;
+    text-underline-offset: 4px;
+    padding: 2px 4px;
+}
+
+#hero p a:hover {
+    padding: 2px 4px;
+}
+
+#hero .name::after {
+    content: '(technically, it\'s philip)';
+    font-family: "Schoolbell", cursive;
+    font-size: 1rem;
+    font-weight: 400;
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    width: 200%;
+    color: var(--accent-color);
+}
+
+#featured .container {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: var(--flex-gap);
+}
+
+#featured .container .case {
+    width: 100%;
+    height: 400px;
+    padding: 16px;
+    background-color: var(--secondary-color);
+    border: var(--border-color);
+    border-radius: var(--border-light);
+    padding: 2rem 2rem 0 2rem;
+    overflow: hidden;
+    line-height: 1.8rem;
+}
+
+#featured .container .case:hover {
+    background-color: var(--secondary-color-highlight);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#featured .container .case .title {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+#featured .container .case .description {
+    color: var(--text-color-light);
+    overflow: hidden;
+}
+
+#featured .container .case .display {
+    border: var(--border-color);
+    border-radius: var(--border-light);
+    margin-top: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+#featured .container .case .display img {
+    object-fit: cover;
+    border-radius: var(--border-light);
+    width: 100%;
+    height: 100%;
+}
+
+#tools .wrapper {
+    display: flex;
+    gap: var(--flex-gap);
+    flex-wrap: wrap;
+    margin: 16px 0;
+}
+
+#tools .tool {
+    width: 90px;
+    height: 90px;
+    transition: width 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px;
+    background-color: var(--secondary-color);
+    border-radius: var(--border-light);
+    border: var(--border-color);
+    transition: border-color 0.3s ease;
+    text-align: center;
+    position: relative;
+    cursor: help;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+#tools .tool img {
+    width: 2rem;
+    height: 2rem;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(12%) saturate(7450%) hue-rotate(170deg) brightness(115%) contrast(117%);
+}
+
+#tools .tool#figma:hover {
+    border: 3px solid #fe7236;
+}
+
+#tools .tool#photoshop:hover {
+    border: 3px solid #3729ff;
+}
+
+#tools .tool#illustrator:hover {
+    border: 3px solid #ff9d08;
+}
+
+#tools .tool#github:hover {
+    border: 3px solid #a01ca0;
+}
+
+#tools .tool#vscode:hover {
+    border: 3px solid #0973b2;
+}
+
+#tools .tool#eleventy:hover {
+    border: 3px solid #e23c2e;
+}
+
+#tools .tool#wordpress:hover {
+    border: 3px solid #3858e9;
+}
+
+#tools .tool#react:hover {
+    border: 3px solid #58c4dc;
+}
+
+#tools .tool#gatsby:hover {
+    border: 3px solid #a456f0;
+}
+
+#tools .tool#typescript:hover {
+    border: 3px solid #3178c6;
+}
+
+#tools .tool::after {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    width: 300px;
+    min-height: 100%;
+    height: auto;
+    z-index: 100;
+    left: 120%;
+    top: -8px;
+    text-align: left;
+    padding: 8px 8px;
+
+    background: rgba(55, 55, 55, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(77, 77, 77, 0.37);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.41);
+}
+
+#tools .tool:hover::after {
+    visibility: visible;
+    transition: opacity 0.3s;
+    opacity: 100%;
+}
+
+#tools .tool#figma::after {
+    content: 'I use Figma to build wireframes, mockups, and flowcharts. Figma handles everything, and is my main tool of choice.';
+}
+
+#tools .tool#photoshop::after {
+    content: 'I use Adobe Photoshop to build assets, present mockups, and edit photos. Anything that Figma can\'t do, Photoshop has it covered.';
+}
+
+#tools .tool#illustrator::after {
+    content: 'Adobe Illustrator needs no explanation, there\'s a reason it\'s the industry standard, and the only standard, for vector graphics.';
+}
+
+#tools .tool#github::after {
+    content: 'I use GitHub to manage all of my projects, once they finally escape windows file explorer. Putting Git here would be a disservice to the GitHub.';
+}
+
+#tools .tool#vscode::after {
+    content: 'VSCode is my main code editor and lightweight IDE for most of my projects. I have used them all, and none of them come close -- check out my blog to see which plugins I use!';
+}
+
+#tools .tool#eleventy::after {
+    content: 'I use Eleventy to deploy static sites and blogs with very low upkeep cost, and very high performance. Even this site is built using eleventy!';
+}
+
+#tools .tool#wordpress::after {
+    content: 'I use WordPress for client-focused websites that need to be updated frequently by other non-developers, or for projects that require complex setups (plugins, never ending plugins)';
+}
+
+#tools .tool#react::after {
+    content: 'React is my JS library of choice for websites and SPAs that require more dynamic content and state management than an eleventy site should handle.';
+}
+
+#tools .tool#gatsby::after {
+    content: 'Gatsby is my static site generator of choice for React projects. When the site is too complex for an eleventy setup, Gatsby is my next choice.';
+}
+
+#courses .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--flex-gap);
+    margin-top: 16px;
+}
+
+#courses .container .course {
+    background-color: var(--secondary-color);
+    border: var(--border-color);
+    border-radius: var(--border-light);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: var(--flex-gap);
+    padding: 0.5rem 1rem;
+    flex-basis: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    color: var(--text-color);
+}
+
+#courses .container .course:hover {
+    background-color: var(--secondary-color-highlight);
+    transition: background-color 0.3s ease-in-out;
+}
+
+#courses .container .course .status {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+}
+
+.complete {
+    background-color: #0ea762;
+    border: 2px solid #0a3220;
+}
+
+.inprogress {
+    background-color: #f5d60b;
+    border: 2px solid #4f5027;
+}
+
+#contact {
+    text-align: center;
+}
+
+#contact h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+#contact .contact-columns {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+#contact .contact-col {
+    flex-basis: 32%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    background-color: var(--secondary-color);
+    border: var(--border-color);
+    border-radius: var(--border-light);
+    overflow: hidden;
+    line-height: 1.8rem;
+    padding: 2rem;
+    min-height: 400px;
+}
+
+#contact .contact-col p {
+    text-align: center;
+}
+
+#contact .contact-btn {
+    color: #fff;
+    background-color: var(--secondary-color-highlight);
+    border-radius: var(--border-light);
+    border: var(--border-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+#contact .contact-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+/* Tablet (max-width: 900px) */
+@media (max-width: 960px) {
+
+    body {
+        padding: 5% 10%;
+    }
+    
+    #hero h2, h2 {
+        font-size: 2rem;
+    }
+
+    #hero h2 .name::after {
+        display: none;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #featured .container {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        padding-bottom: 16px;
+        flex-wrap: wrap;
+        gap: var(--flex-gap);
+    }
+
+    nav ul:nth-of-type(2)::after {
+        display: none;
+    }
+
+    .contact-columns {
+        flex-wrap: wrap;
+    }
+}
+
+/* Phone (max-width: 600px) */
+@media (max-width: 600px) {
+
+    body {
+        padding: 5% 5%;
+    }
+
+    #contact .contact-col {
+        min-width: 100%;
+    }
+}

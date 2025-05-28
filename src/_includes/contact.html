@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% block page_content %}
+<section id="contact">
+  <h1>Let's work on something together!</h1>
+  <div class="contact-columns">
+    <div class="contact-col">
+      <h2>Email Me</h2>
+      <p>
+        The easiest way to reach me is through email - I check it often, so
+        you'll hear back from me pretty quickly.
+      </p>
+      <a
+        href="#"
+        class="contact-btn"
+        onclick="copyFunc()"
+        onmouseout="outFunc()"
+        id="emailBtn"
+        >Copy my Email Address</a
+      >
+    </div>
+    <div class="contact-col">
+      <h2>Connect on LinkedIn</h2>
+      <p>Feel free to connect with me on LinkedIn and send me a message</p>
+      <a
+        href="https://linkedin.com/in/nckcffmn"
+        target="_blank"
+        class="contact-btn"
+        >Visit my LinkedIn Profile</a
+      >
+    </div>
+    <div class="contact-col">
+      <h2>DM me on social media</h2>
+      <p>
+        Instagram is social media platform I check most often
+      </p>
+      <a href="https://github.com/nckcffmn" target="_blank" class="contact-btn">
+        View my Instagram</a
+      >
+    </div>
+  </div>
+
+  <script>
+    function copyFunc() {
+      var myEmail = "ncoffman97@gmail.com";
+      navigator.clipboard.writeText(myEmail);
+
+      var btn = document.getElementById("emailBtn");
+      btn.innerHTML = "Email address copied!";
+    }
+
+    function outFunc() {
+      var tooltip = document.getElementById("emailBtn");
+      tooltip.innerHTML = "Copy my Email Address";
+    }
+  </script>
+</section>
+{% endblock %}
